@@ -1,8 +1,6 @@
 class Transaction:
-    def __init__(self, operation_id, state, date, operation_amount, description, from_who, to_whom):
-        self.operation_id = operation_id
+    def __init__(self, date, operation_amount, description, from_who, to_whom):
         self.date = date
-        self.state = state
         self.operation_amount = operation_amount
         self.description = description
         self.from_who = from_who

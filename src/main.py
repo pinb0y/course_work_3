@@ -8,8 +8,7 @@ five_last_operations = make_five_last_transaction_objects(
 
 def show_five_last_operations(operations):
     for operation in operations:
-        print(operation)
-        print()
+        print(operation, end='\n\n')
 
 
 if __name__ == "__main__":

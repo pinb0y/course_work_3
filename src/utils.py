@@ -30,7 +30,7 @@ def make_five_last_transaction_objects(operations_list):
     operation_objects = []
     for operation in operations_list:
         operation_objects.append(
-            Transaction(operation['id'], operation['state'], operation['date'],
+            Transaction(operation['date'],
                         operation['operationAmount'], operation["description"],
                         operation.get("from"), operation["to"]))
     return operation_objects
