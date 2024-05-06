@@ -1,12 +1,11 @@
 import json
 
-from src.settings import TRANSACTIONS_PATH
 from src.transaction import Transaction
 
 
 def load_operations(path: str) -> list[dict]:
     """
-    Загружает список транзакций из файла и конвертирует json в список
+    Загружает список операций из файла и конвертирует json в список
     :param path: путь к файлу с профессиями
     :return: список профессий
     """
@@ -15,7 +14,7 @@ def load_operations(path: str) -> list[dict]:
         return json.load(file)
 
 
-def sort_to_date_operations(operations_list):
+def get_last_five_sorted_to_date_executed_operations(operations_list):
     executed_transactions = []
 
     for operation in operations_list:
@@ -27,7 +26,7 @@ def sort_to_date_operations(operations_list):
     return executed_transactions[:5]
 
 
-def get_five_last_operations(operations_list):
+def make_five_last_transaction_objects(operations_list):
     operation_objects = []
     for operation in operations_list:
         operation_objects.append(
@@ -35,9 +34,3 @@ def get_five_last_operations(operations_list):
                         operation['operationAmount'], operation["description"],
                         operation.get("from"), operation["to"]))
     return operation_objects
-
-
-result = get_five_last_operations(sort_to_date_operations(load_operations(TRANSACTIONS_PATH)))
-for i in result:
-    print(i)
-    print()
