@@ -6,3 +6,6 @@ ROOT_PATH = Path(__file__).parent.parent
 DATA_PATH = ROOT_PATH.joinpath('data')
 # путь к файлу с транзакциями
 TRANSACTIONS_PATH = DATA_PATH.joinpath('operations.json')
+
+# количество выводимых операций
+TRANSACTIONS_QUANTITY = 5
