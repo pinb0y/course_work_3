@@ -14,12 +14,13 @@ def load_operations(path: str) -> list[dict]:
         return json.load(file)
 
 
-def get_last_some_sorted_to_date_executed_operations(operations_list: list[dict], operation_quantity: int) -> list[dict]:
+def get_last_some_sorted_to_date_executed_operations(operations_list: list[dict],
+                                                     operation_quantity: int) -> list[dict]:
     """
-    Отбирает успешные операции, сортирует их по дате от ближайшей до дальней и выводит 5 последних.
-    :param operation_quantity: количество выводимых операций
+    Отбирает успешные операции, сортирует их по дате от ближайшей до дальней и выводит сколько надо последних.
+    :param operation_quantity: Количество выводимых операций
     :param operations_list: Список с операциями клиента
-    :return: список с пятью последними операциями
+    :return: список последними операциями
     """
     executed_transactions: list[dict] = []
 
@@ -35,7 +36,7 @@ def get_last_some_sorted_to_date_executed_operations(operations_list: list[dict]
 def make_some_last_transaction_objects(operations_list: list[dict]) -> list[Transaction]:
     """
     Преобразует операции в экземпляры класса Transaction.
-    :param operations_list: список с пятью последними операциями
+    :param operations_list: Список с последними операциями
     :return:
     """
     operation_objects: list[Transaction] = []
